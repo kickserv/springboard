@@ -1,3 +1,3 @@
 module Springboard
-  VERSION = "1.3.3"
+  VERSION = "5.1.1"
 end

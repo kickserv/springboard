@@ -2,7 +2,7 @@
 
 require 'pathname'
 
-# Not using optparse or trollop because they raise on unknown args, and 
+# Not using optparse or trollop because they raise on unknown args, and
 # we want to pass all unknown args to elasticsearch.
 args = ARGV.join(" ")
 
@@ -21,4 +21,4 @@ if dir = args.slice!(config_directory_arg)
   end
 end
 
-exec (Pathname.new(File.dirname(__FILE__)) + "../vendor/elasticsearch/bin/elasticsearch").realpath.to_s, args.strip
+exec (Pathname.new(File.dirname(__FILE__)) + "../vendor/elasticsearch/bin/elasticsearch").realpath.to_s

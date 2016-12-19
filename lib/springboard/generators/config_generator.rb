@@ -8,7 +8,7 @@ module Springboard
       def config
         say "Installing config..."
         template "elasticsearch.yml", "config/elasticsearch/elasticsearch.yml"
-        copy_file "logging.yml", "config/elasticsearch/logging.yml"
+        copy_file "log4j2.properties", "config/elasticsearch/log4j2.properties"
         copy_file "elasticsearch.in.sh", "config/elasticsearch/elasticsearch.in.sh"
         say "Run elasticsearch with springboard -c config/elasticsearch to use your new config."
         say "Check here for more configuration options:"
@@ -19,9 +19,8 @@ module Springboard
       protected
 
       def application_name
-        Rails.application.class.name.split('::').first.underscore 
+        Rails.application.class.name.split('::').first.underscore
       end
     end
   end
 end
-
